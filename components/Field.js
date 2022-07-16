@@ -9,14 +9,14 @@ const FieldWrapper = styled.View`
 `
 
 
-export default function Field() {
+export default function Field({expression}) {
 
   return (
     <FieldWrapper>
       <ScrollView
         horizontal={true}
       >
-        <FieldText numberOfLines={1}>Open up !!</FieldText>
+        <FieldText numberOfLines={1}>{expression}</FieldText>
       </ScrollView>
     </FieldWrapper>
   );

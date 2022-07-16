@@ -24,24 +24,24 @@ const ButtonText = styled.Text`
 `
 
 
-export default function ButtonCalculator({value}) {
+export default function ButtonCalculator({value, onPressHandler}) {
   if (value !== '=' && value !== 'C') {
     if (isNaN(value)) {
       return  (
-      <ButtonWrapperNotNumber>
+      <ButtonWrapperNotNumber onPress={onPressHandler}>
         <ButtonText>{value}</ButtonText>
       </ButtonWrapperNotNumber>
       )
     } else {
       return (
-        <ButtonWrapperNumber>
+        <ButtonWrapperNumber onPress={onPressHandler}>
           <ButtonText>{value}</ButtonText>
         </ButtonWrapperNumber>
       )
     }
   } else {
     return (
-    <ButtonWrapperEquallyAndClear>
+    <ButtonWrapperEquallyAndClear onPress={onPressHandler}>
       <ButtonText>{value}</ButtonText>
     </ButtonWrapperEquallyAndClear>
     )
